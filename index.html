@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>CHAVA joyería</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#f7f1e9;
+  color:#25211e;
+}
+
+header{
+  background:#fffdf9;
+  border-bottom:1px solid #e5ddd3;
+  padding:18px 7%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:10;
+}
+
+.logo{
+  font-family:Georgia,serif;
+  font-size:30px;
+  letter-spacing:4px;
+}
+
+.logo small{
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+nav button{
+  border:none;
+  background:none;
+  padding:10px 15px;
+  cursor:pointer;
+  border-radius:30px;
+}
+
+nav .active{
+  background:#29231e;
+  color:white;
+}
+
+.hero{
+  min-height:500px;
+  padding:80px 8%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:50px;
+  background:linear-gradient(135deg,#f7f1e9,#e9ddce);
+}
+
+.hero-text{
+  max-width:650px;
+}
+
+.eyebrow{
+  color:#927043;
+  font-size:12px;
+  letter-spacing:3px;
+  font-weight:bold;
+}
+
+h1{
+  font-family:Georgia,serif;
+  font-size:70px;
+  line-height:.95;
+  margin:20px 0;
+}
+
+.hero p{
+  color:#756d66;
+  line-height:1.7;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:25px;
+  padding:15px 25px;
+  background:#28221e;
+  color:white;
+  border:none;
+  border-radius:30px;
+  cursor:pointer;
+}
+
+.hero-box{
+  background:#fffdf9;
+  padding:40px;
+  border-radius:25px;
+  max-width:330px;
+  box-shadow:0 20px 50px #0001;
+}
+
+.hero-box strong{
+  display:block;
+  font-family:Georgia,serif;
+  font-size:27px;
+  margin:20px 0 10px;
+}
+
+section{
+  padding:80px 8%;
+}
+
+.section-title{
+  font-family:Georgia,serif;
+  font-size:50px;
+  margin:10px 0 35px;
+}
+
+.filters{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
+}
+
+.filters button{
+  padding:10px 18px;
+  border:1px solid #ddd1c3;
+  background:white;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.product{
+  background:white;
+  border:1px solid #e5ddd3;
+  border-radius:18px;
+  overflow:hidden;
+}
+
+.photo{
+  height:230px;
+  background:linear-gradient(145deg,#eee5db,#d6c8b9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Georgia,serif;
+  font-size:60px;
+  color:#99764b;
+}
+
+.product-info{
+  padding:20px;
+}
+
+.product-info small{
+  color:#927043;
+  letter-spacing:2px;
+}
+
+.product-info h3{
+  font-family:Georgia,serif;
+  font-size:25px;
+  margin:8px 0;
+}
+
+.price{
+  font-weight:bold;
+  margin-bottom:15px;
+}
+
+.product button{
+  width:100%;
+  padding:11px;
+  border:1px solid #29231e;
+  background:white;
+  border-radius:25px;
+  cursor:pointer;
+}
+
+.product button:hover{
+  background:#29231e;
+  color:white;
+}
+
+.steps{
+  background:#28221e;
+  color:white;
+}
+
+.steps-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+  margin-top:40px;
+}
+
+.step{
+  border-top:1px solid #65594f;
+  padding-top:20px;
+}
+
+.step span{
+  color:#c9a675;
+  font-family:Georgia,serif;
+  font-size:28px;
+}
+
+.step h3{
+  font-family:Georgia,serif;
+  font-size:27px;
+  margin:12px 0;
+}
+
+.step p{
+  color:#cfc6bd;
+  line-height:1.6;
+}
+
+.info{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.card{
+  background:white;
+  padding:40px;
+  border-radius:22px;
+  border:1px solid #e5ddd3;
+}
+
+.card.gold{
+  background:#e9ddce;
+}
+
+.card h2{
+  font-family:Georgia,serif;
+  font-size:40px;
+  margin:12px 0 20px;
+}
+
+.card li{
+  margin:12px 0;
+  color:#756d66;
+  line-height:1.5;
+}
+
+footer{
+  padding:30px 8%;
+  background:#fffdf9;
+  border-top:1px solid #ddd3c8;
+  color:#756d66;
+}
+
+dialog{
+  border:none;
+  border-radius:22px;
+  width:min(500px,90%);
+  padding:30px;
+  box-shadow:0 20px 80px #0005;
+  margin:auto;
+}
+
+dialog::backdrop{
+  background:#0008;
+}
+
+.dialog-title{
+  display:flex;
+  justify-content:space-between;
+  margin-bottom:25px;
+}
+
+.dialog-title h2{
+  font-family:Georgia,serif;
+  font-size:35px;
+}
+
+.close{
+  border:none;
+  background:none;
+  font-size:25px;
+  cursor:pointer;
+}
+
+.cart-item{
+  padding:15px 0;
+  border-bottom:1px solid #eee;
+  display:flex;
+  justify-content:space-between;
+}
+
+.total{
+  padding:20px 0;
+  display:flex;
+  justify-content:space-between;
+  font-size:20px;
+  font-weight:bold;
+}
+
+input,textarea{
+  width:100%;
+  padding:13px;
+  margin:8px 0 15px;
+  border:1px solid #ddd3c8;
+  border-radius:10px;
+}
+
+@media(max-width:900px){
+  .products{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .steps-grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .hero{
+    flex-direction:column;
+  }
+
+  .info{
+    grid-template-columns:1fr;
+  }
+}
+
+@media(max-width:600px){
+  h1{
+    font-size:52px;
+  }
+
+  .products{
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+  }
+
+  .steps-grid{
+    grid-template-columns:1fr;
+  }
+
+  header{
+    padding:15px 4%;
+  }
+
+  nav button{
+    padding:7px;
+  }
+
+  section{
+    padding:55px 5%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+CHAVA <small>joyería</small>
+</div>
+
+<nav>
+<button id="clienteBtn" class="active" onclick="cambiarModo('cliente')">
+Cliente
+</button>
+
+<button id="asesoraBtn" onclick="cambiarModo('asesora')">
+Asesora
+</button>
+
+<button onclick="abrirCarrito()">
+🛍️ <span id="contador">0</span>
+</button>
+</nav>
+
+</header>
+
+
+<section class="hero">
+
+<div class="hero-text">
+
+<div class="eyebrow">CHAVA JOYERÍA · CATÁLOGO DIGITAL</div>
+
+<h1 id="tituloHero">
+Encuentra una pieza que hable por ti.
+</h1>
+
+<p id="textoHero">
+Explora nuestro catálogo, agrega tus piezas y genera tu solicitud con un folio.
+</p>
+
+<button class="btn" onclick="document.getElementById('catalogo').scrollIntoView()">
+Ver catálogo
+</button>
+
+</div>
+
+<div class="hero-box">
+
+<div class="eyebrow">01</div>
+
+<strong id="tarjetaTitulo">
+Compra como cliente
+</strong>
+
+<p id="tarjetaTexto">
+Elige tus piezas y coordina apartado, entrega y liquidación con tu asesora.
+</p>
+
+</div>
+
+</section>
+
+
+<section id="catalogo">
+
+<div class="eyebrow">CATÁLOGO</div>
+
+<h2 class="section-title" id="tituloCatalogo">
+Piezas para ti
+</h2>
+
+<div class="filters">
+
+<button onclick="filtrar('Todos')">Todos</button>
+<button onclick="filtrar('Aretes')">Aretes</button>
+<button onclick="filtrar('Cadenas')">Cadenas</button>
+<button onclick="filtrar('Dijes')">Dijes</button>
+<button onclick="filtrar('Pulseras')">Pulseras</button>
+
+</div>
+
+<div class="products" id="productos"></div>
+
+</section>
+
+
+<section class="steps">
+
+<div class="eyebrow">¿CÓMO FUNCIONA?</div>
+
+<h2 class="section-title">
+Compra, aparta, recibe y liquida.
+</h2>
+
+<div class="steps-grid">
+
+<div class="step">
+<span>01</span>
+<h3>Elige</h3>
+<p>Selecciona las piezas que quieres comprar o revender.</p>
+</div>
+
+<div class="step">
+<span>02</span>
+<h3>Genera tu folio</h3>
+<p>Captura tus datos y genera tu solicitud.</p>
+</div>
+
+<div class="step">
+<span>03</span>
+<h3>Aparta</h3>
+<p>Realiza tu apartado por el canal acordado con tu asesora.</p>
+</div>
+
+<div class="step">
+<span>04</span>
+<h3>Recibe y liquida</h3>
+<p>Recibe tu pedido y liquida conforme a las condiciones acordadas.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section>
+
+<div class="info">
+
+<div class="card">
+
+<div class="eyebrow">CONDICIONES</div>
+
+<h2>Todo claro desde el inicio.</h2>
+
+<ul>
+
+<li>Los apartados son no reembolsables.</li>
+
+<li>La fecha de entrega se acuerda al realizar el pedido.</li>
+
+<li>Los cambios de fecha deben notificarse con anticipación.</li>
+
+<li>Las piezas personalizadas o sobre pedido requieren 50% de anticipo y 50% contra entrega.</li>
+
+<li>Para grabado, la pieza debe estar totalmente liquidada.</li>
+
+<li>El servicio de grabado podrá agendarse con 50% de anticipo y 50% restante contra entrega.</li>
+
+</ul>
+
+</div>
+
+
+<div class="card gold">
+
+<div class="eyebrow">ASESORAS</div>
+
+<h2>Compra para revender.</h2>
+
+<p>
+Entra como asesora para consultar el catálogo con precio de asesora,
+armar tu pedido de reventa y generar tu folio.
+</p>
+
+<br>
+
+<p>
+<strong>Esta primera versión no procesa pagos en línea.</strong>
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<strong>CHAVA joyería</strong>
+
+<br><br>
+
+Catálogo digital · Clientes y asesoras
+
+</footer>
+
+
+<!-- CARRITO -->
+
+<dialog id="carrito">
+
+<div class="dialog-title">
+
+<h2>Tu pedido</h2>
+
+<button class="close" onclick="carrito.close()">×</button>
+
+</div>
+
+<div id="listaCarrito"></div>
+
+<div class="total">
+
+<span>Total</span>
+
+<span id="total">$0</span>
+
+</div>
+
+<button class="btn" style="width:100%" onclick="abrirFormulario()">
+Generar folio
+</button>
+
+</dialog>
+
+
+<!-- FORMULARIO -->
+
+<dialog id="formulario">
+
+<div class="dialog-title">
+
+<h2>Generar folio</h2>
+
+<button class="close" onclick="formulario.close()">×</button>
+
+</div>
+
+<label>
+Nombre
+<input id="nombre" placeholder="Tu nombre">
+</label>
+
+<label>
+WhatsApp
+<input id="telefono" placeholder="10 dígitos">
+</label>
+
+<label>
+Nota
+<textarea id="nota" placeholder="Algún detalle de tu pedido"></textarea>
+</label>
+
+<button class="btn" style="width:100%" onclick="crearPedido()">
+Crear folio
+</button>
+
+</dialog>
+
+
+<!-- ÉXITO -->
+
+<dialog id="exito">
+
+<div style="text-align:center">
+
+<div class="eyebrow">PEDIDO GENERADO</div>
+
+<h2 style="font-family:Georgia,serif;font-size:45px;margin:20px" id="folio">
+</h2>
+
+<p id="mensaje"></p>
+
+<br>
+
+<button class="btn" onclick="exito.close()">
+Listo
+</button>
+
+</div>
+
+</dialog>
+
+
+<script>
+
+const productos=[
+
+{
+id:1,
+categoria:"Aretes",
+nombre:"Arracadas Aura",
+cliente:1290,
+asesora:890,
+simbolo:"◯"
+},
+
+{
+id:2,
+categoria:"Cadenas",
+nombre:"Cadena Clásica",
+cliente:1490,
+asesora:980,
+simbolo:"⌁"
+},
+
+{
+id:3,
+categoria:"Dijes",
+nombre:"Dije Inicial",
+cliente:990,
+asesora:650,
+simbolo:"◇"
+},
+
+{
+id:4,
+categoria:"Pulseras",
+nombre:"Esclava Plata",
+cliente:1790,
+asesora:1200,
+simbolo:"—"
+},
+
+{
+id:5,
+categoria:"Aretes",
+nombre:"Doble Vista",
+cliente:1190,
+asesora:760,
+simbolo:"◉"
+},
+
+{
+id:6,
+categoria:"Cadenas",
+nombre:"Cadena 40 cm",
+cliente:1250,
+asesora:820,
+simbolo:"⌁"
+},
+
+{
+id:7,
+categoria:"Dijes",
+nombre:"Dije Corazón",
+cliente:890,
+asesora:590,
+simbolo:"♡"
+},
+
+{
+id:8,
+categoria:"Pulseras",
+nombre:"Pulsera Minimal",
+cliente:1390,
+asesora:940,
+simbolo:"∞"
+}
+
+];
+
+
+let modo="cliente";
+
+let carritoProductos=[];
+
+
+function dinero(numero){
+
+return new Intl.NumberFormat(
+"es-MX",
+{
+style:"currency",
+currency:"MXN",
+maximumFractionDigits:0
+}
+).format(numero);
+
+}
+
+
+function mostrarProductos(lista=productos){
+
+const contenedor=document.getElementById("productos");
+
+contenedor.innerHTML="";
+
+
+lista.forEach(producto=>{
+
+let precio=
+modo==="asesora"
+?producto.asesora
+:producto.cliente;
+
+contenedor.innerHTML+=`
+
+<div class="product">
+
+<div class="photo">
+${producto.simbolo}
+</div>
+
+<div class="product-info">
+
+<small>${producto.categoria}</small>
+
+<h3>${producto.nombre}</h3>
+
+<div class="price">
+${dinero(precio)}
+</div>
+
+${modo==="asesora"
+?'<small>PRECIO DE ASESORA · REVENTA</small>'
+:""}
+
+<br><br>
+
+<button onclick="agregar(${producto.id})">
+Agregar al pedido
+</button>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+function cambiarModo(nuevoModo){
+
+modo=nuevoModo;
+
+document.getElementById("clienteBtn")
+.classList.toggle("active",modo==="cliente");
+
+document.getElementById("asesoraBtn")
+.classList.toggle("active",modo==="asesora");
+
+
+if(modo==="asesora"){
+
+document.getElementById("tituloHero").innerText=
+"Tu catálogo para revender.";
+
+document.getElementById("textoHero").innerText=
+"Consulta precios de asesora, arma tu pedido y genera tu folio.";
+
+document.getElementById("tarjetaTitulo").innerText=
+"Compra como asesora";
+
+document.getElementById("tarjetaTexto").innerText=
+"Selecciona piezas al precio de asesora para preparar tu pedido de reventa.";
+
+document.getElementById("tituloCatalogo").innerText=
+"Catálogo para asesoras";
+
+}else{
+
+document.getElementById("tituloHero").innerText=
+"Encuentra una pieza que hable por ti.";
+
+document.getElementById("textoHero").innerText=
+"Explora nuestro catálogo, agrega tus piezas y genera tu solicitud con un folio.";
+
+document.getElementById("tarjetaTitulo").innerText=
+"Compra como cliente";
+
+document.getElementById("tarjetaTexto").innerText=
+"Elige tus piezas y coordina apartado, entrega y liquidación con tu asesora.";
+
+document.getElementById("tituloCatalogo").innerText=
+"Piezas para ti";
+
+}
+
+mostrarProductos();
+
+}
+
+
+function filtrar(categoria){
+
+if(categoria==="Todos"){
+
+mostrarProductos();
+
+}else{
+
+mostrarProductos(
+productos.filter(
+producto=>producto.categoria===categoria
+)
+);
+
+}
+
+}
+
+
+function agregar(id){
+
+let existente=
+carritoProductos.find(
+producto=>producto.id===id
+);
+
+if(existente){
+
+existente.cantidad++;
+
+}else{
+
+carritoProductos.push({
+id:id,
+cantidad:1
+});
+
+}
+
+actualizarContador();
+
+}
+
+
+function actualizarContador(){
+
+let total=
+carritoProductos.reduce(
+(suma,producto)=>suma+producto.cantidad,
+0
+);
+
+document.getElementById("contador").innerText=total;
+
+}
+
+
+function abrirCarrito(){
+
+mostrarCarrito();
+
+document.getElementById("carrito").showModal();
+
+}
+
+
+function mostrarCarrito(){
+
+let lista=document.getElementById("listaCarrito");
+
+lista.innerHTML="";
+
+let total=0;
+
+
+if(carritoProductos.length===0){
+
+lista.innerHTML=
+"<p>Tu pedido está vacío.</p>";
+
+}else{
+
+carritoProductos.forEach(item=>{
+
+let producto=
+productos.find(
+p=>p.id===item.id
+);
+
+let precio=
+modo==="asesora"
+?producto.asesora
+:producto.cliente;
+
+total+=precio*item.cantidad;
+
+lista.innerHTML+=`
+
+<div class="cart-item">
+
+<div>
+<strong>${producto.nombre}</strong>
+<br>
+${item.cantidad} × ${dinero(precio)}
+</div>
+
+<button onclick="eliminar(${producto.id})">
+Eliminar
+</button>
+
+</div>
+
+`;
+
+});
+
+}
+
+
+document.getElementById("total").innerText=
+dinero(total);
+
+}
+
+
+function eliminar(id){
+
+carritoProductos=
+carritoProductos.filter(
+producto=>producto.id!==id
+);
+
+actualizarContador();
+
+mostrarCarrito();
+
+}
+
+
+function abrirFormulario(){
+
+if(carritoProductos.length===0){
+
+alert("Agrega al menos una pieza.");
+
+return;
+
+}
+
+carrito.close();
+
+formulario.showModal();
+
+}
+
+
+function crearPedido(){
+
+let nombre=
+document.getElementById("nombre").value.trim();
+
+let telefono=
+document.getElementById("telefono").value.trim();
+
+if(!nombre||!telefono){
+
+alert("Escribe tu nombre y WhatsApp.");
+
+return;
+
+}
+
+
+let prefijo=
+modo==="asesora"
+?"CHV-A"
+:"CHV-C";
+
+let numero=
+Math.floor(
+10000+Math.random()*90000
+);
+
+let folio=
+prefijo+"-"+numero;
+
+
+document.getElementById("folio").innerText=
+folio;
+
+
+document.getElementById("mensaje").innerText=
+modo==="asesora"
+
+?`Gracias ${nombre}. Tu pedido de asesora quedó registrado con el folio ${folio}. Coordina tu apartado y entrega por el canal habitual.`
+
+:`Gracias ${nombre}. Tu solicitud quedó registrada con el folio ${folio}. Coordina tu apartado y entrega con tu asesora.`;
+
+
+formulario.close();
+
+exito.showModal();
+
+
+carritoProductos=[];
+
+actualizarContador();
+
+}
+
+
+mostrarProductos();
+
+</script>
+
+</body>
+</html>
